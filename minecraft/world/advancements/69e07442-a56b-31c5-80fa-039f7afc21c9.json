@@ -1,0 +1,56 @@
+{
+  "minecraft:recipes/building_blocks/spruce_planks": {
+    "criteria": {
+      "has_log": "2023-06-26 22:28:30 +0000"
+    },
+    "done": true
+  },
+  "nuclearcraft:root": {
+    "criteria": {
+      "location": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  },
+  "mowziesmobs:root": {
+    "criteria": {
+      "custom_test_name": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cake": {
+    "criteria": {
+      "has_egg": "2023-06-26 22:29:05 +0000"
+    },
+    "done": true
+  },
+  "heroesexpansion:root": {
+    "criteria": {
+      "tick": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  },
+  "cfm:root": {
+    "criteria": {
+      "tick": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  },
+  "cfm:install": {
+    "criteria": {
+      "tick": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "taiga": "2023-06-26 22:27:26 +0000"
+    },
+    "done": false
+  },
+  "cqrepoured:cqr/root": {
+    "criteria": {
+      "tick": "2023-06-26 22:27:26 +0000"
+    },
+    "done": true
+  }
+}

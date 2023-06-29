@@ -1,0 +1,143 @@
+---- Minecraft Crash Report ----
+// Lolis deobfuscated this stacktrace using MCP's stable-39 mappings.
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 2023-06-12 06:16:25 GMT
+Description: Exception in server tick loop
+
+Missing Mods:
+    unknown : need [2.1.0,2.2.0): have missing
+
+Missing Mods:
+    unknown : need [3.1.7,): have missing
+
+Missing Mods:
+    unknown : need [1.2.0,2.0.0): have missing
+
+net.minecraftforge.fml.common.MultipleModsErrored
+    at net.minecraftforge.fml.common.Loader.sortModList(Loader.java:300)
+    at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:572)
+    at net.minecraftforge.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:98)
+    at net.minecraftforge.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:333)
+    at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:125)
+    at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+    at java.lang.Thread.run(Thread.java:750)
+
+(MixinBooter) Mixins in Stacktrace:
+    net.minecraft.server.MinecraftServer:
+        zone.rong.loliasm.common.priorities.mixins.MinecraftServerMixin (mixins.priorities.json) [censoredasm5_12]
+    net.minecraftforge.fml.common.FMLCommonHandler:
+        zone.rong.loliasm.common.vanities.mixins.FMLCommonHandlerMixin (mixins.vanities.json) [censoredasm5_12]
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+  Minecraft Version: 1.12.2
+  Operating System: Linux (aarch64) version 5.15.0-101.103.2.1.el8uek.aarch64
+  Java Version: 1.8.0_371, Oracle Corporation
+  Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+  Memory: 8019555480 bytes (7648 MB) / 10290200576 bytes (9813 MB) up to 10290200576 bytes (9813 MB)
+  JVM Flags: 2 total; -Xms10240M -Xmx10240M
+  IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+  FML: MCP 9.42 LoliASM 5.12 Powered by Forge 14.23.5.2860 71 mods loaded, 71 mods active
+       States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+       
+       | State | ID                                           | Version            | Source                                            | Signature                                |
+       |:----- |:-------------------------------------------- |:------------------ |:------------------------------------------------- |:---------------------------------------- |
+       | L     | minecraft                                    | 1.12.2             | minecraft.jar                                     | None                                     |
+       | L     | mcp                                          | 9.42               | minecraft.jar                                     | None                                     |
+       | L     | FML                                          | 8.0.99.99          | forge-1.12.2-14.23.5.2860.jar                     | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | L     | forge                                        | 14.23.5.2860       | forge-1.12.2-14.23.5.2860.jar                     | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | L     | mixinbooter                                  | 8.2                | minecraft.jar                                     | None                                     |
+       | L     | com.elytradev.movingworld.common.asm.coremod |                    | minecraft.jar                                     | None                                     |
+       | L     | obfuscate                                    | 0.4.2              | minecraft.jar                                     | None                                     |
+       | L     | opencomputers|core                           | 1.8.2              | minecraft.jar                                     | None                                     |
+       | L     | securitycraft                                | v1.9.6             | [1.12.2]+SecurityCraft+v1.9.6.jar                 | None                                     |
+       | L     | actuallyadditions                            | 1.12.2-r152        | ActuallyAdditions-1.12.2-r152.jar                 | None                                     |
+       | L     | aiimprovements                               | 0.0.1.3            | AIImprovements-1.12-0.0.1b3.jar                   | None                                     |
+       | L     | aquaculture                                  | 1.6.8              | Aquaculture-1.12.2-1.6.8.jar                      | None                                     |
+       | L     | artifacts                                    | 1.12.2-1.2.3       | Artifacts-1.12.2-1.2.3.jar                        | None                                     |
+       | L     | autoreglib                                   | 1.3-32             | AutoRegLib-1.3-32.jar                             | None                                     |
+       | L     | baubles                                      | 1.5.2              | Baubles-1.12-1.5.2.jar                            | None                                     |
+       | L     | betterbuilderswands                          | 0.13.2             | BetterBuildersWands-1.12.2-0.13.2.271+5997513.jar | None                                     |
+       | L     | bettercaves                                  | 1.12.2             | bettercaves-1.12.2-2.0.4.jar                      | None                                     |
+       | L     | bettermineshafts                             | 1.12.2-2.2.1       | BetterMineshaftsForge-1.12.2-2.2.1.jar            | None                                     |
+       | L     | camera                                       | 1.0.10             | camera-1.0.11.jar                                 | None                                     |
+       | L     | loliasm                                      | 5.12               | censoredasm5.12.jar                               | None                                     |
+       | L     | chisel                                       | MC1.12.2-1.0.2.45  | Chisel-MC1.12.2-1.0.2.45.jar                      | None                                     |
+       | L     | clumps                                       | 3.1.2              | Clumps-3.1.2.jar                                  | None                                     |
+       | L     | cofhcore                                     | 4.6.6              | CoFHCore-1.12.2-4.6.6.1-universal.jar             | None                                     |
+       | L     | cyclicmagic                                  | 1.20.12            | Cyclic-1.12.2-1.20.14.jar                         | None                                     |
+       | L     | davincisvessels                              | @DVESSELSVER@      | davincisvessels-1.12-6.355-full.jar               | None                                     |
+       | L     | elevatorid                                   | 1.3.14             | ElevatorMod-1.12.2-1.3.14.jar                     | None                                     |
+       | L     | golems                                       | 7.1.9              | ExtraGolems-1.12-7.1.9.jar                        | None                                     |
+       | L     | fastleafdecay                                | v14                | FastLeafDecay-v14.jar                             | None                                     |
+       | L     | cfm                                          | 6.3.0              | furniture-6.3.2-1.12.2.jar                        | None                                     |
+       | L     | gravestone                                   | 1.10.3             | gravestone-1.10.3.jar                             | None                                     |
+       | L     | cgm                                          | 0.15.3             | guns-0.15.3-1.12.2.jar                            | None                                     |
+       | L     | immersivepetroleum                           | 1.1.10             | immersivepetroleum-1.12.2-1.1.10.jar              | None                                     |
+       | L     | inventorypets                                | 2.0.15             | inventorypets-1.12-2.0.15.jar                     | None                                     |
+       | L     | ironchest                                    | 1.12.2-7.0.67.844  | ironchest-1.12.2-7.0.72.847.jar                   | None                                     |
+       | L     | ironfurnaces                                 | 1.3.5              | ironfurnaces-1.3.5.jar                            | None                                     |
+       | L     | jei                                          | 4.16.1.1003        | jei_1.12.2-4.16.1.1003.jar                        | None                                     |
+       | L     | journeymap                                   | 1.12.2-5.7.1       | journeymap-1.12.2-5.7.1.jar                       | None                                     |
+       | L     | jrftl                                        | 1.1                | JRFTL[1.12.2]-1.1.jar                             | None                                     |
+       | L     | mahoutsukai                                  | 1.12.2-v1.19.55    | mahoutsukai-1.12.2-v1.19.55.jar                   | None                                     |
+       | L     | mcjtylib_ng                                  | 3.5.4              | mcjtylib-1.12-3.5.4.jar                           | None                                     |
+       | L     | mmoparties                                   | 2.4.2              | mmoparties-2.4.4.266.jar                          | None                                     |
+       | L     | movingworld                                  | 1.12-6.353         | movingworld-1.12-6.353-full.jar                   | None                                     |
+       | L     | mowziesmobs                                  | 1.5.8              | mowziesmobs-1.5.8.jar                             | None                                     |
+       | L     | netherportalfix                              | 5.3.17             | NetherPortalFix_1.12.1-5.3.17.jar                 | None                                     |
+       | L     | nuclearcraft                                 | 2.18zzz            | NuclearCraft-2.18zzz-1.12.2.jar                   | None                                     |
+       | L     | omlib                                        | 3.1.5-256          | omlib-1.12.2-3.1.5-256.jar                        | None                                     |
+       | L     | ompd                                         | 3.1.1-76           | ompd-1.12.2-3.1.1-76.jar                          | None                                     |
+       | L     | opencomputers                                | 1.8.2              | OpenComputers-MC1.12.2-1.8.2+b4abbf9.jar          | None                                     |
+       | L     | openmodularturrets                           | 3.1.14-382         | openmodularturrets-1.12.2-3.1.14-382.jar          | None                                     |
+       | L     | oreexcavation                                | 1.4.150            | OreExcavation-1.4.150.jar                         | None                                     |
+       | L     | harvestcraft                                 | 1.12.2zb           | Pam's+HarvestCraft+1.12.2zg.jar                   | None                                     |
+       | L     | placebo                                      | 1.6.0              | Placebo-1.12.2-1.6.0.jar                          | None                                     |
+       | L     | randomloot                                   | 1.7.5              | randomloot-1.12.2-1.7.5.jar                       | None                                     |
+       | L     | refinedstorage                               | 1.6.16             | refinedstorage-1.6.16.jar                         | None                                     |
+       | L     | refinedstorageaddons                         | 0.4.5              | refinedstorageaddons-0.4.5.jar                    | None                                     |
+       | L     | rftools                                      | 7.73               | rftools-1.12-7.73.jar                             | None                                     |
+       | L     | rftoolspower                                 | 1.2.0              | rftoolspower-1.12-1.2.0.jar                       | None                                     |
+       | L     | rftpwroc                                     | 0.1                | rftpwr_oc-0.2.jar                                 | None                                     |
+       | L     | roguelike                                    | 1.8.0              | RoguelikeDungeons-1.12.2-1.8.0.jar                | None                                     |
+       | L     | silentgear                                   | 0.6.5              | SilentGear-1.12.2-0.6.7+76.jar                    | None                                     |
+       | L     | silentlib                                    | 3.0.13             | SilentLib-1.12.2-3.0.14+168.jar                   | None                                     |
+       | L     | thaumcraft                                   | 6.1.BETA26         | Thaumcraft-1.12.2-6.1.BETA26.jar                  | None                                     |
+       | L     | tcinventoryscan                              | 2.0.10             | ThaumicInventoryScanning_1.12.2-2.0.10.jar        | None                                     |
+       | L     | theoneprobe                                  | 1.4.28             | theoneprobe-1.12-1.4.28.jar                       | None                                     |
+       | L     | thermalexpansion                             | 5.5.7              | ThermalExpansion-1.12.2-5.5.7.1-universal.jar     | None                                     |
+       | L     | thermalfoundation                            | 2.6.7              | ThermalFoundation-1.12.2-2.6.7.1-universal.jar    | None                                     |
+       | L     | travelersbackpack                            | 1.0.35             | TravelersBackpack-1.12.2-1.0.35.jar               | None                                     |
+       | L     | waystones                                    | 4.1.0              | Waystones_1.12.2-4.1.0.jar                        | None                                     |
+       | L     | immersiveengineering                         | 0.12-98            | ImmersiveEngineering-0.12-98.jar                  | None                                     |
+       | L     | llibrary                                     | 1.7.20             | llibrary-1.7.20-1.12.2.jar                        | None                                     |
+       | L     | rtg                                          | 6.1.0.0-snapshot.1 | RTG-1.12.2-6.1.0.0-snapshot.1.jar                 | None                                     |
+  Loaded coremods (and transformers): SecurityCraftLoadingPlugin ([1.12.2]+SecurityCraft+v1.9.6.jar)
+                                        
+                                      llibrary (llibrary-core-1.0.11-1.12.2.jar)
+                                        net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+                                        net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+                                      IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+                                        blusunrize.immersiveengineering.common.asm.IEClassTransformer
+                                      MovingWorldCore (movingworld-1.12-6.353-full.jar)
+                                        
+                                      Let Me Despawn (letmedespawn-1.12.2-forge-1.0.2.jar)
+                                        
+                                      MixinBooter (!mixinbooter-8.2.jar)
+                                        
+                                      ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+                                        com.mrcrayfish.obfuscate.asm.ObfuscateTransformer
+                                      CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+                                        team.chisel.ctm.client.asm.CTMTransformer
+                                      LoliASM (censoredasm5.12.jar)
+                                        
+                                      TransformerLoader (OpenComputers-MC1.12.2-1.8.2+b4abbf9.jar)
+                                        li.cil.oc.common.asm.ClassTransformer
+  Suspected Mods: Forge Mod Loader (FML), Minecraft Forge (forge)
+  Profiler Position: N/A (disabled)
+  Is Modded: Definitely; Server brand changed to 'fml,forge'
+  Type: Dedicated Server (map_server.txt)

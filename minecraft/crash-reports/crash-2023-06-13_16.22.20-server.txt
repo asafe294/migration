@@ -1,0 +1,148 @@
+---- Minecraft Crash Report ----
+// Lolis deobfuscated this stacktrace using MCP's stable-39 mappings.
+// This is a token for 1 free hug. Redeem at your nearest Mojangsta: [~~HUG~~]
+
+Time: 2023-06-13 16:22:20 GMT
+Description: Exception in server tick loop
+
+java.lang.NullPointerException: Exception in server tick loop
+    at deathtags.core.events.EventCommon.onPlayerLeave(EventCommon.java:67)
+    at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_698_EventCommon_onPlayerLeave_PlayerLoggedOutEvent.invoke(.dynamic)
+    at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+    at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+    at net.minecraftforge.fml.common.FMLCommonHandler.firePlayerLoggedOut(FMLCommonHandler.java:580)
+    at net.minecraft.server.management.PlayerList.playerLoggedOut(PlayerList.java:388)
+    at net.minecraft.network.NetHandlerPlayServer.onDisconnect(NetHandlerPlayServer.java:853)
+    at net.minecraft.network.NetworkManager.handleDisconnection(NetworkManager.java:453)
+    at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:213)
+    at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:790)
+    at net.minecraft.server.dedicated.DedicatedServer.updateTimeLightAndEntities(DedicatedServer.java:397)
+    at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:668)
+    at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+    at java.lang.Thread.run(Thread.java:750)
+
+(MixinBooter) Mixins in Stacktrace:
+    net.minecraft.server.MinecraftServer:
+        zone.rong.loliasm.common.priorities.mixins.MinecraftServerMixin (mixins.priorities.json) [censoredasm5.12.jar]
+    net.minecraftforge.fml.common.FMLCommonHandler:
+        zone.rong.loliasm.common.vanities.mixins.FMLCommonHandlerMixin (mixins.vanities.json) [censoredasm5.12.jar]
+    net.minecraft.server.management.PlayerList:
+        net.geforcemods.securitycraft.mixin.camera.PlayerListMixin (securitycraft.mixins.json) [unknown-source]
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+  Minecraft Version: 1.12.2
+  Operating System: Linux (aarch64) version 5.15.0-101.103.2.1.el8uek.aarch64
+  Java Version: 1.8.0_371, Oracle Corporation
+  Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+  Memory: 8592461912 bytes (8194 MB) / 10681843712 bytes (10187 MB) up to 10681843712 bytes (10187 MB)
+  JVM Flags: 2 total; -Xms10240M -Xmx10240M
+  IntCache: cache: 1, tcache: 1, allocated: 12, tallocated: 94
+  FML: MCP 9.42 LoliASM 5.12 Powered by Forge 14.23.5.2860 75 mods loaded, 75 mods active
+       States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+       
+       | State  | ID                                           | Version            | Source                                            | Signature                                |
+       |:------ |:-------------------------------------------- |:------------------ |:------------------------------------------------- |:---------------------------------------- |
+       | LCHIJA | minecraft                                    | 1.12.2             | minecraft.jar                                     | None                                     |
+       | LCHIJA | mcp                                          | 9.42               | minecraft.jar                                     | None                                     |
+       | LCHIJA | FML                                          | 8.0.99.99          | forge-1.12.2-14.23.5.2860.jar                     | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | LCHIJA | forge                                        | 14.23.5.2860       | forge-1.12.2-14.23.5.2860.jar                     | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | LCHIJA | mixinbooter                                  | 8.2                | minecraft.jar                                     | None                                     |
+       | LCHIJA | com.elytradev.movingworld.common.asm.coremod |                    | minecraft.jar                                     | None                                     |
+       | LCHIJA | obfuscate                                    | 0.4.2              | minecraft.jar                                     | None                                     |
+       | LCHIJA | opencomputers|core                           | 1.8.2              | minecraft.jar                                     | None                                     |
+       | LCHIJA | securitycraft                                | v1.9.6             | [1.12.2]+SecurityCraft+v1.9.6.jar                 | None                                     |
+       | LCHIJA | actuallyadditions                            | 1.12.2-r152        | ActuallyAdditions-1.12.2-r152.jar                 | None                                     |
+       | LCHIJA | aiimprovements                               | 0.0.1.3            | AIImprovements-1.12-0.0.1b3.jar                   | None                                     |
+       | LCHIJA | aquaculture                                  | 1.6.8              | Aquaculture-1.12.2-1.6.8.jar                      | None                                     |
+       | LCHIJA | baubles                                      | 1.5.2              | Baubles-1.12-1.5.2.jar                            | None                                     |
+       | LCHIJA | artifacts                                    | 1.12.2-1.2.3       | Artifacts-1.12.2-1.2.3.jar                        | None                                     |
+       | LCHIJA | autoreglib                                   | 1.3-32             | AutoRegLib-1.3-32.jar                             | None                                     |
+       | LCHIJA | betterbuilderswands                          | 0.13.2             | BetterBuildersWands-1.12.2-0.13.2.271+5997513.jar | None                                     |
+       | LCHIJA | bettercaves                                  | 1.12.2             | bettercaves-1.12.2-2.0.4.jar                      | None                                     |
+       | LCHIJA | bettermineshafts                             | 1.12.2-2.2.1       | BetterMineshaftsForge-1.12.2-2.2.1.jar            | None                                     |
+       | LCHIJA | camera                                       | 1.0.10             | camera-1.0.11.jar                                 | None                                     |
+       | LCHIJA | jei                                          | 4.16.1.1003        | jei_1.12.2-4.16.1.1003.jar                        | None                                     |
+       | LCHIJA | loliasm                                      | 5.12               | censoredasm5.12.jar                               | None                                     |
+       | LCHIJA | chisel                                       | MC1.12.2-1.0.2.45  | Chisel-MC1.12.2-1.0.2.45.jar                      | None                                     |
+       | LCHIJA | chunkpregenerator                            | 2.5.0              | Chunk+Pregenerator-V1.12-2.5.7.jar                | None                                     |
+       | LCHIJA | clumps                                       | 3.1.2              | Clumps-3.1.2.jar                                  | None                                     |
+       | LCHIJA | codechickenlib                               | 3.2.3.358          | CodeChickenLib-1.12.2-3.2.3.358-universal.jar     | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+       | LCHIJA | redstoneflux                                 | 2.1.1              | RedstoneFlux-1.12-2.1.1.1-universal.jar           | None                                     |
+       | LCHIJA | cofhcore                                     | 4.6.6              | CoFHCore-1.12.2-4.6.6.1-universal.jar             | None                                     |
+       | LCHIJA | cofhworld                                    | 1.4.0              | CoFHWorld-1.12.2-1.4.0.1-universal.jar            | None                                     |
+       | LCHIJA | cyclicmagic                                  | 1.20.12            | Cyclic-1.12.2-1.20.14.jar                         | 0e5cb559be7d03f3fc18b8cba547d663e25f28af |
+       | LCHIJA | movingworld                                  | 1.12-6.353         | movingworld-1.12-6.353-full.jar                   | None                                     |
+       | LCHIJA | davincisvessels                              | @DVESSELSVER@      | davincisvessels-1.12-6.355-full.jar               | None                                     |
+       | LCHIJA | elevatorid                                   | 1.3.14             | ElevatorMod-1.12.2-1.3.14.jar                     | None                                     |
+       | LCHIJA | golems                                       | 7.1.9              | ExtraGolems-1.12-7.1.9.jar                        | None                                     |
+       | LCHIJA | fastleafdecay                                | v14                | FastLeafDecay-v14.jar                             | None                                     |
+       | LCHIJA | cfm                                          | 6.3.0              | furniture-6.3.2-1.12.2.jar                        | None                                     |
+       | LCHIJA | gravestone                                   | 1.10.3             | gravestone-1.10.3.jar                             | None                                     |
+       | LCHIJA | cgm                                          | 0.15.3             | guns-0.15.3-1.12.2.jar                            | None                                     |
+       | LCHIJA | theoneprobe                                  | 1.4.28             | theoneprobe-1.12-1.4.28.jar                       | None                                     |
+       | LCHIJA | thermalfoundation                            | 2.6.7              | ThermalFoundation-1.12.2-2.6.7.1-universal.jar    | None                                     |
+       | LCHIJA | immersiveengineering                         | 0.12-98            | ImmersiveEngineering-0.12-98.jar                  | None                                     |
+       | LCHIJA | immersivepetroleum                           | 1.1.10             | immersivepetroleum-1.12.2-1.1.10.jar              | None                                     |
+       | LCHIJA | inventorypets                                | 2.0.15             | inventorypets-1.12-2.0.15.jar                     | None                                     |
+       | LCHIJA | ironchest                                    | 1.12.2-7.0.67.844  | ironchest-1.12.2-7.0.72.847.jar                   | None                                     |
+       | LCHIJA | ironfurnaces                                 | 1.3.5              | ironfurnaces-1.3.5.jar                            | None                                     |
+       | LCHIJA | journeymap                                   | 1.12.2-5.7.1       | journeymap-1.12.2-5.7.1.jar                       | None                                     |
+       | LCHIJA | jrftl                                        | 1.1                | JRFTL[1.12.2]-1.1.jar                             | None                                     |
+       | LCHIJA | mahoutsukai                                  | 1.12.2-v1.19.55    | mahoutsukai-1.12.2-v1.19.55.jar                   | None                                     |
+       | LCHIJA | mcjtylib_ng                                  | 3.5.4              | mcjtylib-1.12-3.5.4.jar                           | None                                     |
+       | LCHIJA | mmoparties                                   | 2.4.2              | mmoparties-2.4.4.266.jar                          | None                                     |
+       | LCHIJA | llibrary                                     | 1.7.20             | llibrary-1.7.20-1.12.2.jar                        | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+       | LCHIJA | mowziesmobs                                  | 1.5.8              | mowziesmobs-1.5.8.jar                             | None                                     |
+       | LCHIJA | netherportalfix                              | 5.3.17             | NetherPortalFix_1.12.1-5.3.17.jar                 | None                                     |
+       | LCHIJA | nuclearcraft                                 | 2.18zzz            | NuclearCraft-2.18zzz-1.12.2.jar                   | None                                     |
+       | LCHIJA | opencomputers                                | 1.8.2              | OpenComputers-MC1.12.2-1.8.2+b4abbf9.jar          | None                                     |
+       | LCHIJA | thaumcraft                                   | 6.1.BETA26         | Thaumcraft-1.12.2-6.1.BETA26.jar                  | None                                     |
+       | LCHIJA | thermalexpansion                             | 5.5.7              | ThermalExpansion-1.12.2-5.5.7.1-universal.jar     | None                                     |
+       | LCHIJA | omlib                                        | 3.1.5-256          | omlib-1.12.2-3.1.5-256.jar                        | None                                     |
+       | LCHIJA | ompd                                         | 3.1.1-76           | ompd-1.12.2-3.1.1-76.jar                          | None                                     |
+       | LCHIJA | openmodularturrets                           | 3.1.14-382         | openmodularturrets-1.12.2-3.1.14-382.jar          | None                                     |
+       | LCHIJA | oreexcavation                                | 1.4.150            | OreExcavation-1.4.150.jar                         | None                                     |
+       | LCHIJA | harvestcraft                                 | 1.12.2zb           | Pam's+HarvestCraft+1.12.2zg.jar                   | None                                     |
+       | LCHIJA | placebo                                      | 1.6.0              | Placebo-1.12.2-1.6.0.jar                          | None                                     |
+       | LCHIJA | randomloot                                   | 1.7.5              | randomloot-1.12.2-1.7.5.jar                       | None                                     |
+       | LCHIJA | refinedstorage                               | 1.6.16             | refinedstorage-1.6.16.jar                         | 57893d5b90a7336e8c63fe1c1e1ce472c3d59578 |
+       | LCHIJA | refinedstorageaddons                         | 0.4.5              | refinedstorageaddons-0.4.5.jar                    | None                                     |
+       | LCHIJA | rftools                                      | 7.73               | rftools-1.12-7.73.jar                             | None                                     |
+       | LCHIJA | rftoolspower                                 | 1.2.0              | rftoolspower-1.12-1.2.0.jar                       | None                                     |
+       | LCHIJA | rftpwroc                                     | 0.1                | rftpwr_oc-0.2.jar                                 | None                                     |
+       | LCHIJA | roguelike                                    | 1.8.0              | RoguelikeDungeons-1.12.2-1.8.0.jar                | None                                     |
+       | LCHIJA | silentlib                                    | 3.0.13             | SilentLib-1.12.2-3.0.14+168.jar                   | None                                     |
+       | LCHIJA | silentgear                                   | 0.6.5              | SilentGear-1.12.2-0.6.7+76.jar                    | None                                     |
+       | LCHIJA | tcinventoryscan                              | 2.0.10             | ThaumicInventoryScanning_1.12.2-2.0.10.jar        | None                                     |
+       | LCHIJA | travelersbackpack                            | 1.0.35             | TravelersBackpack-1.12.2-1.0.35.jar               | None                                     |
+       | LCHIJA | waystones                                    | 4.1.0              | Waystones_1.12.2-4.1.0.jar                        | None                                     |
+       | LCHIJA | rtg                                          | 6.1.0.0-snapshot.1 | RTG-1.12.2-6.1.0.0-snapshot.1.jar                 | None                                     |
+  Loaded coremods (and transformers): SecurityCraftLoadingPlugin ([1.12.2]+SecurityCraft+v1.9.6.jar)
+                                        
+                                      llibrary (llibrary-core-1.0.11-1.12.2.jar)
+                                        net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+                                        net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+                                      IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+                                        blusunrize.immersiveengineering.common.asm.IEClassTransformer
+                                      MovingWorldCore (movingworld-1.12-6.353-full.jar)
+                                        
+                                      Let Me Despawn (letmedespawn-1.12.2-forge-1.0.2.jar)
+                                        
+                                      MixinBooter (!mixinbooter-8.2.jar)
+                                        
+                                      ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+                                        com.mrcrayfish.obfuscate.asm.ObfuscateTransformer
+                                      CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+                                        team.chisel.ctm.client.asm.CTMTransformer
+                                      LoliASM (censoredasm5.12.jar)
+                                        
+                                      TransformerLoader (OpenComputers-MC1.12.2-1.8.2+b4abbf9.jar)
+                                        li.cil.oc.common.asm.ClassTransformer
+  Suspected Mods: MMO Parties (mmoparties), Forge Mod Loader (FML), Minecraft Forge (forge)
+  Profiler Position: N/A (disabled)
+  Player Count: 1 / 20; [EntityPlayerMP['OdeioValorant'/95903, l='world', x=-527.88, y=47.00, z=-72.53]]
+  Is Modded: Definitely; Server brand changed to 'fml,forge'
+  Type: Dedicated Server (map_server.txt)
